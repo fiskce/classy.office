@@ -13,6 +13,7 @@ import StopLight from './StopLight';
 import Cart from './Cart';
 import History from './History';
 import { AiFillAlert } from 'react-icons/ai'
+import Sell from './Sell';
 
 
 
@@ -35,7 +36,7 @@ function Home() {
     })
     const { open, size } = state
     const [tabvalue, setTabvalue] = React.useState(0);
-
+    const [loading, setLoading] = React.useState(false)
     const handleChange = (event, newValue) => {
         setTabvalue(newValue);
 
@@ -66,6 +67,7 @@ function Home() {
                     </Route>
                     <Route exact path={`${path}cart`} component={Cart} />
                     <Route exact path={`${path}history`} component={History} />
+                    <Route exact path={`${path}sell`} component={Sell} />
                     <Route >
                         <div className='flex w-full flex-col justify-center items-center my-3'>
                             <AiFillAlert style={{ width: 40, height: 40 }} />
